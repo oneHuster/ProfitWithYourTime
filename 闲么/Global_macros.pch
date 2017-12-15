@@ -1,0 +1,54 @@
+//
+//  Global_macros.pch
+//  闲么
+//
+//  Created by 邹应天 on 16/1/23.
+//  Copyright © 2016年 yingtian zou. All rights reserved.
+//
+
+#ifndef Global_macros_pch
+#define Global_macros_pch
+
+// Include any system framework and library headers here that should be included in all compilation units.
+// You will also need to set the Prefix Header build setting of one or more of your targets to reference this file.
+#define padding 10
+//Global .h macros imports
+#ifdef __OBJC__
+    #import <UIKit/UIKit.h>
+    #import <Foundation/Foundation.h>
+    #import <CoreData/CoreData.h>
+#endif
+
+#import <Masonry/Masonry.h>
+#import <UITableView+FDTemplateLayoutCell.h>
+#import "UIViewController+notificationForTabbar.h"
+#import "ZYTAudioRecorder.h"
+#import "BaiduMapC.h"
+
+#define V_COLOR [UIColor colorWithWhite:0.94 alpha:1]
+#define Tint_COLOR [UIColor colorWithRed:1 green:0.4 blue:0 alpha:1]
+#define Font_COLOR [UIColor colorWithWhite:0.1 alpha:1]
+#pragma mark ------------------------Screen size
+#define SCREEN_HEIGHT [[UIScreen mainScreen]bounds].size.height
+#define SCREEN_WIDTH [[UIScreen mainScreen]bounds].size.width
+
+#define VC_WIDTH  self.view.frame.size.width
+#define VC_HEIGHT  self.view.frame.size.height
+#define NAV_HEIGHT self.navigationController.navigationBar.frame.size.height+[[UIApplication sharedApplication]statusBarFrame].size.height
+#define Tabbar_HEIGHT self.tabBarController.tabBar.frame.size.height
+
+
+
+#pragma mark ------------------------device model
+#define IS_IPAD (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad)
+#define IS_IPHONE (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPhone)
+#define IS_RETINA ([[UIScreen mainScreen] scale] >= 2.0)
+
+#define DEVICE_WIDTH [[UIScreen mainScreen] currentMode].size.width
+#define DEVICE_HEIGHT [[UIScreen mainScreen] currentMode].size.height
+
+#define IS_IPHONE_4_OR_LESS (IS_IPHONE && DEVICE_WIDTH < 568.0)
+#define IS_IPHONE_5 (IS_IPHONE && DEVICE_WIDTH == 568.0)
+#define IS_IPHONE_6 (IS_IPHONE && DEVICE_WIDTH == 667.0)
+#define IS_IPHONE_6P (IS_IPHONE && DEVICE_WIDTH == 736.0)
+#endif /* Global_macros_pch */
